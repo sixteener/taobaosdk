@@ -1,0 +1,48 @@
+<?php
+namespace Sixteener\TaoBaoSDK\TBK\Top\Request;
+/**
+ * TOP API: taobao.Top.secret.register Request
+ * 
+ * @author auto create
+ * @since 1.0, 2016.08.16
+ */
+class TopSecretRegisterRequest
+{
+	/** 
+	 * 用户id，保证唯一
+	 **/
+	private $userId;
+	
+	private $apiParas = array();
+	
+	public function setUserId($userId)
+	{
+		$this->userId = $userId;
+		$this->apiParas["user_id"] = $userId;
+	}
+
+	public function getUserId()
+	{
+		return $this->userId;
+	}
+
+	public function getApiMethodName()
+	{
+		return "taobao.Top.secret.register";
+	}
+	
+	public function getApiParas()
+	{
+		return $this->apiParas;
+	}
+	
+	public function check()
+	{
+		
+	}
+	
+	public function putOtherTextParam($key, $value) {
+		$this->apiParas[$key] = $value;
+		$this->$key = $value;
+	}
+}
